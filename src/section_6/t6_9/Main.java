@@ -1,4 +1,4 @@
-package section_6.e6_9;
+package section_6.t6_9;
 
 import java.util.Scanner;
 public class Main {
