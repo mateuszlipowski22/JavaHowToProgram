@@ -1,4 +1,4 @@
-package section_6.t6_30;
+package section_6.t6_31;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
@@ -27,7 +27,15 @@ public class Main {
                     guess = scanner.nextInt();
                     round++;
                 }
-                System.out.printf("Hurra !!! Szukana liczba to %d. Zwycięstwo w %d ruchach %n", numberToGuess, round);
+
+                if(round<10){
+                    System.out.println("Znalazłeś sekretną liszbę lub miałeś szczeście");
+                }else if(round==10){
+                    System.out.println("Aha, teraz znasz sekret");
+                }else {
+                    System.out.println("Słabo Ci poszło");
+                }
+                System.out.printf("Szukana liczba to %d. Zwycięstwo w %d ruchach %n", numberToGuess, round);
                 System.out.println("Czy chesz zagrac ponownie? n - wyjscie");
                 game=scanner.next();
             }
