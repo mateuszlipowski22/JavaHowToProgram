@@ -15,7 +15,7 @@ public class MainSimulation1000 {
 
     public static void main(String[] args) {
         Map<Integer,Integer> result = new HashMap<>();
-        int numberOfGames=10000;
+        int numberOfGames=100000;
         int score;
         for (int i = 0; i <numberOfGames ; i++) {
             score=play();
