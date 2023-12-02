@@ -107,6 +107,11 @@ public class DeckOfCards {
         if(!hasFlush(decomposeSuits)){
             return false;
         }
+
+        return hasStraight(decomposeFaces);
+    }
+
+    public boolean hasStraight(Map<String,Integer> decomposeFaces){
         List<String> faces = new ArrayList<>(List.of("As", "Dwókja", "Trójka", "Czwórka", "Piątka", "Szóstka",
                 "Siódemka", "Ósemka", "Dziewiątka", "Dziesiątka", "Walet", "Dama", "Król"));
         List<Integer> tempTable= new ArrayList<>();
@@ -137,5 +142,42 @@ public class DeckOfCards {
             }
         }
         return resultSuits;
+    }
+
+    public int score(Map<String,Integer> decomposeFaces,Map<String,Integer> decomposeSuits){
+
+        if(hasStraightFlush(decomposeFaces,decomposeSuits)){
+            return 8;
+        }
+
+        if(hasFourOfAKind(decomposeFaces)){
+            return 7;
+        }
+
+        if(hasFullHouse(decomposeFaces)){
+            return 6;
+        }
+
+        if(hasFlush(decomposeSuits)){
+            return 5;
+        }
+
+        if(hasStraight(decomposeFaces)){
+            return 4;
+        }
+
+        if(hasThreeOfAKind(decomposeFaces)){
+            return 3;
+        }
+
+        if(hasTwoPair(decomposeFaces)){
+            return 2;
+        }
+
+        if(hasPair(decomposeFaces)){
+            return 1;
+        }
+
+        return 0;
     }
 }
