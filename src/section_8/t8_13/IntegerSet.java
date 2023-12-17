@@ -4,17 +4,21 @@ public class IntegerSet {
     private boolean[] table;
 
     public IntegerSet(int number) {
-        if(number>=0&&number<=100){
-            this.table = new boolean[101];
+        this();
+        if (number >= 0 && number <= 100) {
             this.table[number] = true;
-        }else {
+        } else {
             throw new IllegalArgumentException("Niepoprawna liczba");
         }
     }
 
-    public int getNumber(){
+    public IntegerSet() {
+        this.table = new boolean[101];
+    }
+
+    public int getNumber() {
         for (int i = 0; i < table.length; i++) {
-            if(table[i]){
+            if (table[i]) {
                 return i;
             }
         }
