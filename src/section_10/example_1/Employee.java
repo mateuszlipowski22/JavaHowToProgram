@@ -1,4 +1,4 @@
-package section_10.examples;
+package section_10.example_1;
 
 public abstract class Employee {
     private final String firstName;
