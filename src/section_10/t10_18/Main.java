@@ -32,5 +32,6 @@ public class Main {
 
         payableObjects.forEach(System.out::println);
 
+
     }
 }
