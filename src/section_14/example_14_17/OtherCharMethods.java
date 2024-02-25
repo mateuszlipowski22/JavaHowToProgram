@@ -1,4 +1,4 @@
-package section_14.section_14_17;
+package section_14.example_14_17;
 
 public class OtherCharMethods {
     public static void main(String[] args) {
