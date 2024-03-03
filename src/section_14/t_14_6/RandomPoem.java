@@ -8,7 +8,6 @@ public class RandomPoem {
     private String[] noun ={"chłopak", "dziewczyna","pies","ulica","samochód"};
     private String[] nounRime ={"czteropak", "Pszczyna","owies","ladacznica","pochód"};
     private String[] nounRimeSecond ={"trzepak", "koniczyna","czerkies","anielica","wschód"};
-
     private String[] verb ={"kierował", "skoczył","ominął","biegł","chodził"};
     private String[] preposition ={"z", "na","nad","pod","do"};
     Random random = new Random();
