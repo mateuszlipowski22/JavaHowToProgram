@@ -8,12 +8,12 @@ public class Main {
             MorseCode morseCode = new MorseCode();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Wpisz słowo : ");
+            System.out.println("Wpisz zdanie : ");
             String word = scanner.nextLine();
 
             System.out.println(morseCode.convertToMorseCode(word));
 
-            System.out.println("Wpisz słowo w morse : ");
+            System.out.println("Wpisz zdanie w morse : ");
             String codedWord = scanner.nextLine();
             System.out.println(morseCode.convertSentenceToText(codedWord));
 
