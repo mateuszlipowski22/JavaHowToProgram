@@ -32,7 +32,7 @@ public class UnitConverter {
     }
 
     private Double convertValue(String first, String second, Double value){
-        return conversionTable.get(first).get(second)/value;
+        return conversionTable.get(second).get(first)*value;
     }
 
     private boolean sentenceAnalyze(String sentence){
@@ -91,6 +91,6 @@ public class UnitConverter {
             }
         }
 
-        return String.format("%f %s to %f %s",value,first,convertValue(first,second,value),second);
+        return String.format("%.2f %s to %.2f %s",value,second,convertValue(first,second,value),first);
     }
 }
