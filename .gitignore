@@ -38,3 +38,5 @@ bin/
 /.idea/encodings.xml
 /.idea/jarRepositories.xml
 /.idea/libraries/jaxb_api_20050407.xml
+/src/section_15/example_15_9/javax.activation-api-1.2.0.jar
+/src/section_15/example_15_9/jaxb-api-2.4.0-b180830.0359.jar
