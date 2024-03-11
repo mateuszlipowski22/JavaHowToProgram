@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class CreateTextFile {
     public static void main(String[] args) {
-        try(Formatter output = new Formatter("client.txt")){
+        try(Formatter output = new Formatter(FileUtil.FILE_PATH)){
             Scanner input = new Scanner(System.in);
             System.out.printf("%s%n%s%n",
                     "Wpisz numer konta, imie, nazwisko i saldo",
