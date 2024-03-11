@@ -34,3 +34,7 @@ bin/
 /.idea/vcs.xml
 /.idea/uiDesigner.xml
 /.idea/inspectionProfiles/Project_Default.xml
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/jarRepositories.xml
+/.idea/libraries/jaxb_api_20050407.xml
