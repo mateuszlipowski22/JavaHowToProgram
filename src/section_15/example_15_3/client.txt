@@ -1,3 +1,4 @@
-1 jan nowak 1234,99
-2 adam nowak 123456,99
-4 aaa dddd 12345,99
+11111 jan nowak 12312,23
+22222 adam nowak -1221312,23
+33333 zofia kowalska 0
+44444 zbigniew nowaj 2323232,12
