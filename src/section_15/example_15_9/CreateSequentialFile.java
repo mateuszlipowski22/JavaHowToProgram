@@ -1,7 +1,9 @@
 package section_15.example_15_9;
 
-import javax.xml.bind.JAXB;
+import javax.xml.bind.*;
+import javax.xml.transform.Result;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -29,9 +31,17 @@ public class CreateSequentialFile {
                 }
                 System.out.print("? ");
             }
-            JAXB.marshal(accounts,output);
+            //JAXB.marshal(accounts,output);
+            JAXBContext context = JAXBContext.newInstance(Account.class);
+            Marshaller mar= context.createMarshaller();
+            mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            mar.marshal(accounts, (Result) new File(FileUtil.FILE_PATH));
         } catch (IOException e) {
             System.err.println("Błąd otwarcia pliku. Kończę działanie.");
+        } catch (PropertyException e) {
+            throw new RuntimeException(e);
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
         }
     }
 }

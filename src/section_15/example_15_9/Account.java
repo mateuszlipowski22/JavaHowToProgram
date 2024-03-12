@@ -1,5 +1,8 @@
 package section_15.example_15_9;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "account")
 public class Account {
     private int accountNumber;
     private String firstName;
