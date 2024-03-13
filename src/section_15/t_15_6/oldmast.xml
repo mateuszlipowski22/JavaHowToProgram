@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<accounts>
+    <account>
+        <accountNumber>100</accountNumber>
+        <balance>348,17</balance>
+        <firstName>Jan</firstName>
+        <lastName>Kowalski</lastName>
+    </account>
+    <account>
+        <accountNumber>200</accountNumber>
+        <balance>20,19</balance>
+        <firstName>Anna</firstName>
+        <lastName>Nowak</lastName>
+    </account>
+    <account>
+        <accountNumber>300</accountNumber>
+        <balance>0.00</balance>
+        <firstName>Tomasz</firstName>
+        <lastName>Lewy</lastName>
+    </account>
+    <account>
+        <accountNumber>400</accountNumber>
+        <balance>-42.16</balance>
+        <firstName>Ola</firstName>
+        <lastName>Rudnik</lastName>
+    </account>
+    <account>
+        <accountNumber>500</accountNumber>
+        <balance>-14,22</balance>
+        <firstName>Maja</firstName>
+        <lastName>Prawy</lastName>
+    </account>
+</accounts>
