@@ -1,0 +1,4 @@
+100 Jan Kowalski 348,17
+300 Anna Nowak 20,19
+500 Tomasz Lewy 0,00
+700 Maja Prawy -14,22

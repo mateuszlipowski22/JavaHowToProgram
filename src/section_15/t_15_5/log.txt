@@ -1,0 +1,2 @@
+Niedopasowana transakcja dotycząca konta o numerze 400
+Niedopasowana transakcja dotycząca konta o numerze 900
