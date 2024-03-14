@@ -47,6 +47,5 @@ public class CollectionTest {
                 iterator.remove();
             }
         }
-
     }
 }
