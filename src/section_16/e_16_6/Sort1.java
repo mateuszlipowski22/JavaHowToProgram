@@ -1,8 +1,5 @@
-package org.programowanie_w_java.section_16.e_16_6;
+package section_16.e_16_6;
 
-import org.aspectj.apache.bcel.classfile.SourceFile;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

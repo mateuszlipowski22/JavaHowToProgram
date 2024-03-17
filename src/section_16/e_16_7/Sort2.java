@@ -1,4 +1,4 @@
-package org.programowanie_w_java.section_16.e_16_7;
+package section_16.e_16_7;
 
 import java.util.Arrays;
 import java.util.Collections;

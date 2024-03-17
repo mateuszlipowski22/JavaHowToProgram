@@ -1,4 +1,4 @@
-package org.programowanie_w_java.section_16.e_16_14;
+package section_16.e_16_14;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

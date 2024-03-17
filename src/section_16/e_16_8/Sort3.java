@@ -1,7 +1,6 @@
-package org.programowanie_w_java.section_16.e_16_8;
+package section_16.e_16_8;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

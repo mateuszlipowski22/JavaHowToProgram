@@ -1,4 +1,4 @@
-package org.programowanie_w_java.section_16.e_16_9;
+package section_16.e_16_9;
 
 public class Card {
     public enum Face {As, Dwókja, Trójka, Czwórka, Piątka, Szóstka,

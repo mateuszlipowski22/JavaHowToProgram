@@ -1,4 +1,4 @@
-package org.programowanie_w_java.section_16.e_16_8;
+package section_16.e_16_8;
 
 public class Time2 {
     private int second;

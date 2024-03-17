@@ -1,4 +1,4 @@
-package org.programowanie_w_java.section_16.e_16_12;
+package section_16.e_16_12;
 
 import java.util.ArrayList;
 import java.util.Arrays;
