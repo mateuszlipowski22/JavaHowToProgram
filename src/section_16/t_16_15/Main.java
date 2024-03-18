@@ -13,13 +13,20 @@ public class Main {
 
         Collections.sort(linkedList);
 
-        System.out.println("Posortowana lista: ");
+        System.out.println("Orginalna lista: ");
         System.out.printf("%s %n",linkedList);
 
 
         LinkedList<Character> reverseOrder = createReversedList(linkedList);
         System.out.println("Posortowana odwrotna lista: ");
         System.out.printf("%s %n",reverseOrder);
+
+        System.out.println("Orginalna lista: ");
+        System.out.printf("%s %n",linkedList);
+
+        LinkedList<Character> reverseOrder2 = createReversedList2(linkedList);
+        System.out.println("Posortowana odwrotna lista: ");
+        System.out.printf("%s %n",reverseOrder2);
     }
 
     private static LinkedList<Character> createReversedList(LinkedList<Character> linkedList) {
@@ -29,5 +36,11 @@ public class Main {
             result.add(iterator.previous());
         }
         return result;
+    }
+
+    private static LinkedList<Character> createReversedList2(LinkedList<Character> linkedList) {
+        LinkedList<Character> copy = new LinkedList<>(linkedList);
+        Collections.reverse(copy);
+        return copy;
     }
 }
