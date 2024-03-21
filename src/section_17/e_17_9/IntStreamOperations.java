@@ -33,8 +33,7 @@ public class IntStreamOperations {
 
         System.out.printf("%nSuma poprzez metode reduce: %d%n",
                 IntStream.of(values)
-                        .reduce((x,y)->x+y)
-                        .getAsInt());
+                        .reduce(0,(x,y)->x+y));
         System.out.printf("Iloczyn poprzez metode reduce: %d%n",
                 IntStream.of(values)
                         .reduce((x,y)->x*y)
