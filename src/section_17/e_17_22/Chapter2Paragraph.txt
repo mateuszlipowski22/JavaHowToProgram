@@ -1,0 +1,8 @@
+Ten rozdział stanowi wprowadzenie do programowania w języku Java
+Zaczynamy od przykładów które wyświetlą na ekranie prosty tekst
+Następnie przejdziemy do programu który pobiera od użytkownika dwie
+wartości wylicza ich sumę i wyświetla wynik Dowiesz się jak poinstruować
+komputer aby wykonywał operacje arytmetyczne i zapisywał wyniki w celu
+późniejszego ich użycia Ostatni przykład pokaże jak podejmować decyzje
+Aplikacja porówna dwie liczby i wyświetli komunikat informujący o wyniku porównania
+Do kompilacji i uruchamiania programów użyjemy narzędzi wiersza poleceń z JDK 
