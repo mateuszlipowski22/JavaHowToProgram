@@ -5,6 +5,8 @@ import section_17.employee.e_17_13.Employee;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,10 +42,42 @@ public class Main {
                 .forEach(part -> System.out.printf("%2s %25s %3d %5.2f %n",
                         part.getPartNumber(),part.getPartDescription(),part.getQuantity(), part.getPricePerItem()));
 
-        System.out.printf("%nPosortowane obiekty po pricePerItem%n");
+        System.out.printf("%nOdwzorowanie po partDescription oraz quantity%n");
+//        Map<String,Integer> map = invocesList.stream()
+//                .collect(Collectors.toMap(Invoice::getPartDescription, Invoice::getQuantity));
+//
+//        map.entrySet().stream()
+//                .sorted(Map.Entry.comparingByValue())
+//                                .forEach(entry->System.out.printf("%25s : %5d %n",entry.getKey(),entry.getValue()));
+
         invocesList.stream()
-                .sorted(Comparator.comparing(Invoice::getPricePerItem))
+                .collect(Collectors.toMap(Invoice::getPartDescription, Invoice::getQuantity))
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(entry->System.out.printf("%25s : %5d %n",entry.getKey(),entry.getValue()));
+
+        System.out.printf("%nOdwzorowanie po partDescription oraz wartosci faktury%n");
+        invocesList.stream()
+                .collect(Collectors.toMap(Invoice::getPartDescription,
+                        invoice->(invoice.getPricePerItem()*invoice.getQuantity())
+                )).entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(entry->System.out.printf("%25s : %5.2f %n",entry.getKey(),entry.getValue()));
+
+        System.out.printf("%nOdwzorowanie po partDescription oraz wartosci faktury wieksze od 1000 oraz mniejsze do 5000%n");
+        invocesList.stream()
+                .collect(Collectors.toMap(Invoice::getPartDescription,
+                        invoice->(invoice.getPricePerItem()*invoice.getQuantity())
+                )).entrySet().stream()
+                .filter(entry->entry.getValue()>1000&&entry.getValue()<5000)
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(entry->System.out.printf("%25s : %5.2f %n",entry.getKey(),entry.getValue()));
+
+        System.out.printf("%nWszytstkie faktury ze słowem \"Piła\"%n");
+        invocesList.stream()
+                .filter(invoice -> invoice.getPartDescription().matches("^.*Piła.*$"))
                 .forEach(part -> System.out.printf("%2s %25s %3d %5.2f %n",
-                        part.getPartNumber(),part.getPartDescription(),part.getQuantity(), part.getPricePerItem()));
+                part.getPartNumber(),part.getPartDescription(),part.getQuantity(), part.getPricePerItem()));
     }
 }
