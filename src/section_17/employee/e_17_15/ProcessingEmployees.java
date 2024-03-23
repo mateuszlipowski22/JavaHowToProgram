@@ -3,6 +3,7 @@ package section_17.employee.e_17_15;
 import section_17.employee.e_17_13.Employee;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ProcessingEmployees {
     public static void main(String[] args) {
