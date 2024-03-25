@@ -1,4 +1,4 @@
-package org.programowanie_w_java.section_17.t_17_20;
+package section_17.t_17_20;
 
 import java.util.Arrays;
 import java.util.Scanner;
