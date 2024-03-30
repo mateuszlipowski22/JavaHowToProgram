@@ -1,6 +1,5 @@
 package section_18.t_18_15;
 
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,23 +17,24 @@ public class Main {
     }
 
     public static void checkIfAvailable(int column, int row){
-        if(column>=table.length || row>=table.length){
+        if(column>=table.length || row>=table.length || column<0 || row<0){
             return;
         }
 
-        if(checkIfRowContainsTrue(column)){
+        if(!checkIfRowContainsTrue(column)){
             checkIfAvailable(column+1, row);
         }
 
-        if(checkIfColumnContainsTrue(row)){
+        if(!checkIfColumnContainsTrue(row)){
             checkIfAvailable(column, row+1);
         }
 
-        if(checkIfDiagonalContainsTrue(column,row)){
+        if(!checkIfDiagonalContainsTrue(column,row)){
             return;
         }
 
         table[column][row]=true;
+        printArray();
         checkIfAvailable(column+1, row);
         checkIfAvailable(column, row+1);
     }
@@ -87,6 +87,10 @@ public class Main {
             }
         }
         return true;
-
+    }
+    public static void printArray(){
+        for(boolean[] row : table){
+            System.out.println(Arrays.toString(row));
+        }
     }
 }
