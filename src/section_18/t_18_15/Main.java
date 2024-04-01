@@ -1,11 +1,11 @@
 package section_18.t_18_15;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
-    public static boolean[][] table = new boolean[8][8];
+    private static int ARRAY_SIZE = 8;
+    private static boolean[][] table = new boolean[ARRAY_SIZE][ARRAY_SIZE];
+
 
     public static void main(String[] args) {
         for (boolean[] raw : table) {
@@ -13,30 +13,40 @@ public class Main {
         }
 
         table[0][0] = true;
-        checkIfAvailable(1, 1);
+        checkIfAvailable(0, 0);
     }
 
     public static void checkIfAvailable(int column, int row) {
-        if (column >= table.length || row >= table.length || column < 0 || row < 0) {
+        if (column == table.length-1 && row == table.length-1) {
             return;
         }
 
-        if (!checkIfRowContainsTrue(column)) {
-            checkIfAvailable(column + 1, row);
+        if (column >= table.length) {
+            checkIfAvailable(0,row+1);
+        }
+
+        if (row >= table.length) {
+           return;
         }
 
         if (!checkIfColumnContainsTrue(row)) {
-            checkIfAvailable(column, row + 1);
+            checkIfAvailable(column+1, row);
+        }
+
+        if (!checkIfRowContainsTrue(column)) {
+            checkIfAvailable(column+1, row);
         }
 
         if (!checkIfDiagonalContainsTrue(column, row)) {
-            return;
+            checkIfAvailable(column+1, row);
+        }else {
+            table[column][row]=true;
         }
 
-        table[column][row] = true;
+        System.out.println();
         printArray();
-        checkIfAvailable(column + 1, row);
-        checkIfAvailable(column, row + 1);
+
+        checkIfAvailable(column+1, row);
     }
 
     public static boolean checkIfRowContainsTrue(int row) {
@@ -60,16 +70,35 @@ public class Main {
 
     public static boolean checkIfDiagonalContainsTrue(int column, int row) {
 
-        for (int i = 0; i < 8; i++) {
-            if (table[column + i][row + i] ||
-                table[column + i][row - i] ||
-                table[column - i][row - i] ||
-                table[column - i][row + i]
-            ) {
-                return false;
+        for (int i = 0; i < ARRAY_SIZE; i++) {
+            if (column + i < ARRAY_SIZE && row + i < ARRAY_SIZE &&
+                    column + i >= 0 && row + i >= 0) {
+                if (table[column + i][row + i]) {
+                    return false;
+                }
+            }
+
+            if (column + i < ARRAY_SIZE && row - i < ARRAY_SIZE &&
+                    column + i >= 0 && row - i >= 0) {
+                if (table[column + i][row - i]) {
+                    return false;
+                }
+            }
+
+            if (column - i < ARRAY_SIZE && row - i < ARRAY_SIZE &&
+                    column - i >= 0 && row - i >= 0) {
+                if (table[column - i][row - i]) {
+                    return false;
+                }
+            }
+
+            if (column - i < ARRAY_SIZE && row + i < ARRAY_SIZE &&
+                    column - i >= 0 && row + i >= 0) {
+                if (table[column - i][row + i]) {
+                    return false;
+                }
             }
         }
-
         return true;
     }
 
