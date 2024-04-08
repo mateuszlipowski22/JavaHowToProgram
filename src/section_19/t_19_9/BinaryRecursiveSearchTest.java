@@ -1,37 +1,38 @@
-package section_19.e_19_3;
+package section_19.t_19_9;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class BinarySearchTest {
+import static section_19.t_19_8.RecursiveLinearSearchTest.linearRecursiveSearch;
 
-    public static int binarySearch(int[] data, int key) {
-        int low = 0;
-        int high =  data.length - 1;
+public class BinaryRecursiveSearchTest {
+    public static int[] data;
+
+    public static int binaryRecursiveSearch(int searchKey,int low, int high) {
+
+        if(low==high && data[low]!=searchKey){
+            return -1;
+        }
+
         int middle = (low + high + 1) / 2;
-        int location = -1;
 
-        do {
-            System.out.println(remainingElements(data, low, high));
+        System.out.println(remainingElements(data, low, high));
+        for (int i = 0; i < middle; i++) {
+            System.out.print("   ");
+        }
+        System.out.println(" * ");
 
-            for (int i = 0; i < middle; i++) {
-                System.out.print("   ");
-            }
-            System.out.println(" * ");
-
-            if (key == data[middle]) {
-                location = middle;
-            } else if (key < data[middle]) {
+        if(data[middle]==searchKey){
+            return middle;
+        }else {
+            if (searchKey < data[middle]) {
                 high = middle - 1;
             } else {
                 low = middle + 1;
             }
-
-            middle = (low+high+1)/2;
-        }while ((low<=high) && (location == -1));
-
-        return location;
+            return binaryRecursiveSearch(searchKey,low, high);
+        }
     }
 
     private static String remainingElements(int[] data, int low, int high) {
@@ -52,14 +53,14 @@ public class BinarySearchTest {
         Scanner input = new Scanner(System.in);
         SecureRandom generator = new SecureRandom();
 
-        int[] data = generator.ints(15,10,100).sorted().toArray();
+        data = generator.ints(15,10,100).sorted().toArray();
         System.out.printf("%s %n%n", Arrays.toString(data));
 
         System.out.print("Wpisz liczbę całkowitą (-1 aby zakończyć): ");
         int searchInt = input.nextInt();
 
         while(searchInt !=-1){
-            int location = binarySearch(data,searchInt);
+            int location = binaryRecursiveSearch(searchInt,0   ,data.length-1);
 
             if(location==-1){
                 System.out.printf("%d nie znaleziono%n%n",searchInt);

@@ -16,7 +16,6 @@ public class RecursiveLinearSearchTest {
         }else {
             return linearRecursiveSearch(searchKey,beginning+1);
         }
-
     }
 
     public static void main(String[] args) {
