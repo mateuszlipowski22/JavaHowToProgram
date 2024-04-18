@@ -1,19 +1,19 @@
-package section_21.t_21_7;
+package section_21.t_21_8;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class List <E extends Comparable<E>>{
+public class SortedList<E extends Comparable<E>>{
     ListNode<E> firstNode;
     ListNode<E> lastNode;
 
     private String name;
 
-    public List() {
+    public SortedList() {
         this.name="lista";
     }
 
-    public List(String name) {
+    public SortedList(String name) {
         this.name = name;
         this.firstNode=this.lastNode=null;
     }
@@ -96,5 +96,13 @@ public class List <E extends Comparable<E>>{
         }
 
         System.out.println();
+    }
+
+    public void merge(SortedList<E> secondList){
+        ListNode<E> currentNode = secondList.firstNode;
+        while (Objects.nonNull(currentNode)){
+            add(currentNode.data);
+            currentNode=currentNode.nextNode;
+        }
     }
 }
