@@ -1,7 +1,4 @@
-package section_21.e_21_9;
-
-
-import section_21.e_21_3.List;
+package section_21.t_21_12;
 
 import java.util.NoSuchElementException;
 
@@ -26,5 +23,12 @@ public class Stack<E> {
 
     public void print(){
         stackList.print();
+    }
+
+    public E peek() {
+        if(!stackList.isEmpty()){
+            return stackList.firstNode.data;
+        }
+        return null;
     }
 }
