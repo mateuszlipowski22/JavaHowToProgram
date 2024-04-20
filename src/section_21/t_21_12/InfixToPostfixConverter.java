@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class InfixToPostfixConverter {
-
     private final Map<Character, Integer> orderWeight = new HashMap<>() {{
         put('+', 1);
         put('-', 1);
@@ -15,13 +14,14 @@ public class InfixToPostfixConverter {
         put('^', 3);
     }};
 
-
-    private final StringBuffer postfix = new StringBuffer();
+    private StringBuffer postfix;
     private StringBuffer infix;
 
-    public StringBuffer convertToPostfix(String input) {
+    public String convertToPostfix(String input) {
         this.infix = new StringBuffer(input);
         infix.append(')');
+
+        this.postfix = new StringBuffer();
 
         Stack<Character> characterStack = new Stack<>();
         characterStack.push('(');
@@ -51,7 +51,7 @@ public class InfixToPostfixConverter {
                 }
             }
         }
-        return postfix;
+        return postfix.toString();
     }
 
     private boolean precedent(Character operand1, Character operand2) {
