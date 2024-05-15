@@ -23,6 +23,12 @@ public class ListTest {
             list.insertAt(9,2);
             list.print();
 
+            list.deleteAt(1);
+            list.print();
+
+            list.deleteAt(5);
+            list.print();
+
         }catch (NoSuchElementException noSuchElementException){
             noSuchElementException.printStackTrace();
         }

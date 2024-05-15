@@ -116,4 +116,28 @@ public class List<E> {
             currentNode.nextNode=new ListNode<>(insertItem,tempNode);
         }
     }
+
+    public void deleteAt(int position) {
+        if (position < 0) {
+            throw new IllegalArgumentException(String.format("Lista nie ma ujemnych pozycji %d",position));
+        }
+
+        if (position == 0) {
+            removeFromFront();
+        } else {
+            int currentPosition = 0;
+            ListNode<E> currentNode = this.firstNode;
+
+            while (currentPosition != (position - 1)) {
+                if (Objects.nonNull(currentNode.nextNode)) {
+                    currentNode = currentNode.nextNode;
+                    currentPosition++;
+                } else {
+                    throw new IllegalArgumentException(String.format("Lista nie ma pozycji %d",position));
+                }
+            }
+            ListNode<E> tempNode = currentNode.nextNode;
+            currentNode.nextNode=tempNode.nextNode;
+        }
+    }
 }
