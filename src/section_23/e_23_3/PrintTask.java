@@ -26,5 +26,8 @@ public class PrintTask implements Runnable {
             exception.printStackTrace();
             Thread.currentThread().interrupt();
         }
+
+        System.out.printf("%s obudziło się %n", taskName);
+
     }
 }
