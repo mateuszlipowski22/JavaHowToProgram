@@ -25,6 +25,7 @@ public class Producer implements Runnable{
             }
         }
 
+
         System.out.printf("Producer zakończył produkcję%n Kończenie wątku Producer%n");
     }
 }
