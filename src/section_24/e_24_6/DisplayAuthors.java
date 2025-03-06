@@ -1,4 +1,4 @@
-//package section_24.e_24_6;
+package section_24.e_24_6;
 
 import java.sql.*;
 
@@ -8,6 +8,7 @@ public class DisplayAuthors {
         final String SELECT_QUERY = "SELECT authorID, firstName, lastName FROM authors";
 
         try{
+
             Connection connection = DriverManager.getConnection(DATABASE_URL,"deitel","deitel");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SELECT_QUERY);
