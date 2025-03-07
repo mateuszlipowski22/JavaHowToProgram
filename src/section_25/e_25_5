@@ -1,0 +1,19 @@
+public class Account{
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+Account account = new Account();
+account
+account.setName("Amanda");
+account.getName()
+
+System.out.printf(account.getName())
+String name = account.getName();

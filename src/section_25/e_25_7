@@ -1,0 +1,12 @@
+import java.nio.charset.StandardCharsets;
+import java.util.Locale;Math.PI
+Math.TAU
+Math.pow(2,3)
+Math.abs(2)
+
+String dayName = "Sobota";
+
+dayName.getBytes(StandardCharsets.UTF_8);
+dayName.toLowerCase();
+dayName.toUpperCase(Locale.ROOT);
+dayName.substring(4).toUpperCase()
