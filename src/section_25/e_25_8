@@ -1,0 +1,13 @@
+import java.util.stream.IntStream;
+
+public static void displayCubes() {
+    IntStream.rangeClosed(1, 10)
+            .forEach(i -> System.out.printf("Wartosc %d podniesiona do szescianu to %d%n", i, cube(i))
+            );
+}
+
+public static int cube(int i){
+    return i*i*i;
+}
+
+displayCubes();

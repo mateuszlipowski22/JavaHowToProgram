@@ -1,4 +1,4 @@
-Thu Mar 06 21:02:17 CET 2025 Thread[#1,main,5,main] Cleanup action starting
+Sat Mar 08 20:39:16 CET 2025 Thread[#1,main,5,main] Cleanup action starting
 java.sql.SQLException: Nie znaleziono bazy danych 'books'.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
