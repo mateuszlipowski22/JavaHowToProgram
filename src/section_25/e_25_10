@@ -1,0 +1,8 @@
+import section_21.e_21_3.*;
+
+    List<String> list = new List<String>();
+
+    list.insertAtFront("czerwony");
+    list.print();
+    list.insertAtFront("niebieski");
+    list.print();
