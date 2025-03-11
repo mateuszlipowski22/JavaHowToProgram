@@ -23,6 +23,7 @@ public class DisplayAuthors {
             }
             System.out.println();
 
+
             while (resultSet.next()){
                 for (int i = 1; i <= numberOfColumns; i++) {
                     System.out.printf("%-8s\t", resultSet.getObject(i));
