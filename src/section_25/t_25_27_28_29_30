@@ -1,0 +1,14 @@
+int max = 2147483647;
+max + 1;
+int min = -2147483648;
+min - 1;
+int first = 1234567890;
+int second = 1_234_567_890;
+System.out.printf("1234567890 = 1_234_567_890 :  %b", 1234567890 == 1_234_567_890);
+System.out.printf("1234567890/2 = 1_234_567_890/2 :  %b", 1234567890/2 == 1_234_567_890/2);
+System.out.printf("first : %d , second : %d", first,second);
+System.out.printf("17+23 = 17 + 23 :  %b", 17+23 == 17 + 23);
+int number1=10;
+int number2=15;
+System.out.printf("Suma wynosi %d%n", number1+number2);
+System.out.printf("Suma wynosi %d%n", (number1+number2));
